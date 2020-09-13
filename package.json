@@ -1,0 +1,14 @@
+{
+  "name": "codeial_new",
+  "version": "1.0.0",
+  "description": "My social media web application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pragati",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
