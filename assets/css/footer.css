@@ -1,0 +1,18 @@
+footer {
+  height: 11vh;
+  width: 100%;
+  display: flex;
+  justify-content: row;
+  background-color: grey;
+  color: white;
+  font-family: sans-serif; }
+  footer h2 {
+    margin-top: 0.9vh; }
+  footer ul {
+    list-style-type: none; }
+    footer ul li a {
+      text-decoration: none;
+      color: white;
+      margin: 0.7vw;
+      size: 2rem;
+      font-weight: 600; }
