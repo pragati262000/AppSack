@@ -40,6 +40,7 @@ module.exports.signIn = function(req,res){
 //get the sign up data
 module.exports.create = function(req,res){
     if(req.body.password != req.body.confirm_password){
+        req.flash('error', 'Passwords did not match');
         return res.redirect('back');
     }
     User.findOne({email:req.body.email},
@@ -49,9 +50,11 @@ module.exports.create = function(req,res){
                 console.log("entered");
                 User.create(req.body,function(err,user){
                    if(err){console.log('error in creating user in signing up');return}
+                   req.flash('success', 'Signed up Successfully');
                    return res.redirect('/users/sign_in');
                 })
             }else{
+                req.flash('error', 'User already exists');
                 return res.redirect('back');
             }
 
@@ -59,10 +62,12 @@ module.exports.create = function(req,res){
 }
 //sign in and create a session for the user
 module.exports.createSession = function(req,res){
+    req.flash('success', 'Logged in Successfully');
     return res.redirect('/');
 }
 //Sign out
 module.exports.destroySession= function(req,res){
     req.logout();
+    req.flash('success', 'You have logged out!');
     return res.redirect('/');
 }
