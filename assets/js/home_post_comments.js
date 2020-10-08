@@ -100,4 +100,3 @@ class PostComments{
         });
     }
 }
-module.exports = {PostComments};

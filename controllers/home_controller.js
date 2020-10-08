@@ -1,15 +1,10 @@
 const Post = require('../models/post');
 const User = require('../models/user');
-// module.exports.home = function (req,res){
-//     // console.log(req.cookies);
-//     // //to change value of cookie
-//     // res.cookie('user-id',25);
-//     return res.render('home',{
-//         title: "Home"
-//     });
-// };
+
+
 module.exports.home = async function(req,res){
     try{
+        //populate the user of each post
         let posts = await Post.find({})
         .sort('-createdAt')
         .populate('user')
@@ -31,3 +26,12 @@ module.exports.home = async function(req,res){
         return;
     }
 }
+// module.exports.actionName = function(req, res){}
+
+
+// using then
+// Post.find({}).populate('comments').then(function());
+
+// let posts = Post.find({}).populate('comments').exec();
+
+// posts.then()
