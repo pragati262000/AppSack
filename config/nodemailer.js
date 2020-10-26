@@ -8,7 +8,7 @@ let transporter = nodemailer.createTransport({
     port:587,
     secure:false,
     auth:{
-        user:'dummyacc456654',
+        user:'dummyacc456654@gmail.com',
         pass:'dummy456654'
     }
 });
@@ -19,9 +19,13 @@ let renderTemplate = (data,relativePath)=>{
         path.join( __dirname, '../views/mailers',relativePath),
         data,
         function(err,template){
-            if(err){console.log('error in rendering template');return;}
+            if(err){console.log('error in rendering template',err);return;}
             mailHTML = template;
         }
     )
     return mailHTML;
+}
+module.exports = {
+    transporter:transporter,
+    renderTemplate:renderTemplate
 }
