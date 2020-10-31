@@ -1,6 +1,6 @@
+const Reset = require("../models/reset_password");
 const Post = require('../models/post');
 const User = require('../models/user');
-
 
 module.exports.home = async function(req,res){
     try{
@@ -26,12 +26,3 @@ module.exports.home = async function(req,res){
         return;
     }
 }
-// module.exports.actionName = function(req, res){}
-
-
-// using then
-// Post.find({}).populate('comments').then(function());
-
-// let posts = Post.find({}).populate('comments').exec();
-
-// posts.then()

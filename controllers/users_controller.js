@@ -33,9 +33,7 @@ module.exports.update = async function(req,res){
          }
     }
 }
-        
-
-    
+      
 
 //render the sign up page
 module.exports.signUp = function(req,res){
@@ -66,7 +64,6 @@ module.exports.create = function(req,res){
         function(err,user){
             if(err){console.log('error in finding user in signing up');return}
             if(!user){
-                console.log("entered");
                 User.create(req.body,function(err,user){
                    if(err){console.log('error in creating user in signing up');return}
                    req.flash('success', 'Signed up Successfully');
@@ -90,3 +87,4 @@ module.exports.destroySession= function(req,res){
     req.flash('success', 'You have logged out!');
     return res.redirect('/');
 }
+
