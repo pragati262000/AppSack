@@ -2,13 +2,16 @@ const mongoose = require('mongoose');
 const resetpassSchema = new mongoose.Schema({
     user:{
         type: mongoose.Schema.Types.ObjectId,
+        required:true,
         ref: 'User'
     },
     accessToken:{
-        type:String
+        type:String,
+        required:true
     },
     isValid:{
-        type:Boolean
+        type:Boolean,
+        required:true
     }
 },
 {
