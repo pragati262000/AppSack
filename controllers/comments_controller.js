@@ -45,7 +45,7 @@ module.exports.create = async function(req, res){
 
             req.flash('success', 'Comment published!');
 
-            res.redirect('/');
+           return res.redirect('back');
         }
     }catch(err){
         req.flash('error', err);
